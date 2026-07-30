@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complex Positioning Layout</title>
+    <style>
+        html{
+            margin: 0;
+            font-size: 18px;
+        }
+
+        body{
+            margin: 0;
+        }
+
+        .fixed-header{
+            background-color: mediumspringgreen;
+            color: black;
+            width: 100%;
+            max-width: 1250px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            padding: 20px;
+
+        }
+
+        .logo{
+            font-size: 30px;
+            padding-left: 10px;
+
+        }
+
+        .fixed-header ul{
+            display: flex;
+            gap: 30px;
+            justify-content: flex-end;
+            text-decoration: none;
+            list-style: none;
+            padding-right: 20px;
+            color: white;
+        }
+
+        .fixed-header li{
+            color: black;
+        }
+
+        .fixed-header a{
+            text-decoration: none;
+            color: black;
+        }
+
+        .page-container{
+            display: flex;
+            gap: 30px;
+            margin: 20px;
+        }
+
+        .sticky-sidebar{
+            width: 200px;
+            height: 250px;
+            border: 1px dotted black;
+            background-color: turquoise;
+        }
+
+        .sticky-sidebar ul{
+            list-style: none;
+            text-decoration: none;
+            text-align: left;
+            margin: 0;
+        }
+
+        .sticky-sidebar a{
+            text-decoration: none;
+            text-align: left;
+            color: royalblue;
+            padding-top: 5px;
+        }
+
+
+
+        .sticky-sidebar h2{
+            padding-left: 30px;
+            color: royalblue;
+        }
+
+        .content{
+            margin: 0%;
+            border: 1px solid black;
+            width: 100%;
+            padding: 20px;
+
+        }
+
+        .content h1{
+            margin-top: 0;
+        }
+
+        .overlapping-section{
+            width: 500px;
+            height: 300px;
+            border: 1px solid gray;
+            display: flex;
+            justify-content: flex-start;
+            background-color: darkgrey;
+        }
+
+        .box-box1{
+            width: 100px;
+            height: 100px;
+            border: 1px dotted black;
+            background-color: blue;
+            position: relative;
+            top: 20px;
+            left: 50px;
+            z-index: 1;
+        }
+
+        .box-box2{
+            width: 100px;
+            height: 100px;
+            border: 1px dotted black;
+            background-color: brown;
+            position: relative;
+            top: 50px;
+            left: 25px;
+            z-index: 2;
+        }
+
+        .box-box3{
+            width: 100px;
+            height: 100px;
+            border: 1px dotted black;
+            background-color: blueviolet;
+            position: relative;
+            top: 85px;
+            left: 2px;
+            z-index: 3;
+        }
+
+        footer{
+            background-color: lightgreen;
+            color: black;
+            margin: 0;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .floating-button{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: lightgreen;
+            color: white;
+            font-size: 2rem;
+            z-index: 300;
+            cursor: pointer;
+        }
+
+        hr{
+            height: 2px;
+            background-color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="fixed-header">
+        <div class="logo">Site Logo</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="page-container">
+        <aside class="sticky-sidebar">
+            <h2>Sidebar</h2>
+            <hr>
+            <ul>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+            </ul>
+        </aside>
+        
+        <main class="content">
+            <h1>Main Content</h1>
+            
+            <div class="overlapping-section">
+                <div class="box-box1">Box 1</div>
+                <div class="box-box2">Box 2</div>
+                <div class="box-box3">Box 3</div>
+            </div>
+            
+            <p>This is additional content to create scrolling.</p>
+						<p>This is additional content to create scrolling.</p>
+						<p>This is additional content to create scrolling.</p>
+						<p>This is additional content to create scrolling.</p>
+						<p>This is additional content to create scrolling.</p>
+						<p>This is additional content to create scrolling.</p>
+						<p>This is additional content to create scrolling.</p>
+						<p>This is additional content to create scrolling.</p>
+						<p>This is additional content to create scrolling.</p>
+						<p>This is additional content to create scrolling.</p>
+						<p>This is additional content to create scrolling.</p>
+						<p>This is additional content to create scrolling.</p>
+						<p>This is additional content to create scrolling.</p>
+						<p>This is additional content to create scrolling.</p>
+						<p>This is additional content to create scrolling.</p>
+						<p>This is additional content to create scrolling.</p>
+        </main>
+    </div>
+    
+    <button class="floating-button">+</button>
+    
+    <footer>
+        <p>Footer content</p>
+    </footer>
+    
+</body>
+</html>
